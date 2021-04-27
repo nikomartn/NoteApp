@@ -1,0 +1,4 @@
+<app-note *ngFor="let note of notes" text="{{note.text}}" routerLink="/note/{{note.id}}"></app-note>
+<div class="fab" routerLink="note/0">
+    <p>+</p>
+</div>

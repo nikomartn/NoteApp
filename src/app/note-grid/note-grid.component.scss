@@ -1,0 +1,27 @@
+:host {
+    display : grid;
+    gap: 1rem;
+    margin: 1rem;
+    grid-template-columns: repeat( auto-fill, 8rem );
+    grid-auto-rows: 8rem;
+}
+
+.fab{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: green;
+    height: 3rem;
+    width: 3rem;
+    display: grid;
+    justify-content: center;
+    border-radius: 100%;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    p{
+        align-self: center;
+        font-size: xx-large;
+        margin: 0;
+        font-weight: bold;
+        color: white;
+    }
+}
