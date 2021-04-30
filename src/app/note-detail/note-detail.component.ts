@@ -18,7 +18,7 @@ export class NoteDetailComponent implements OnInit {
     let id = parseInt(this.activatedRoute.snapshot.paramMap.get('id')!);
     if (id != 0){
       this.noteService.getNote(id)
-      .subscribe((note) => this.note = note)
+      .subscribe((note) => {this.note = note!})
     }
   }
   
@@ -28,7 +28,7 @@ export class NoteDetailComponent implements OnInit {
       {
         this.noteService.createNote(this.note.text);
       }else{
-        this.noteService.updateNote(this.note);
+        this.noteService.updateNote(this.note, this.note.id!);
       }
     }
     this.router.navigate(['/']);
@@ -36,7 +36,7 @@ export class NoteDetailComponent implements OnInit {
 
   remove(){
     if(this.note.id != 0){
-      this.noteService.removeNote(this.note.id);
+      this.noteService.removeNote(this.note.id!);
     }
     this.router.navigate(['/']);
   }

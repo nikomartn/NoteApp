@@ -1,9 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-
+import { from, Observable, of } from 'rxjs';
+import { Dexie} from 'dexie';
 export interface NoteModel{
-  id:number,
-  text:string
+  text:string,
+  id?:number
+}
+
+class NoteDatabase extends Dexie{
+  public notes: Dexie.Table<NoteModel, number>;
+
+  public constructor(){
+    super("NoteDatabase");
+    this.version(1).stores({
+      notes: "++id,text"
+    });
+    this.notes = this.table("notes");
+  }
 }
 
 @Injectable({
@@ -11,34 +23,30 @@ export interface NoteModel{
 })
 export class NoteService {
 
-  constructor() { }
-
-  notasFake:NoteModel[] = [{id:1, text:"Hola mundo esta es mi app."}, {id:2, text:"Comprar arándanos"}]
+  db:NoteDatabase = new NoteDatabase();
+  notes:NoteModel[] = []
+  public constructor() {
+  }
 
   getAllNotes():Observable<NoteModel[]> {
-    return of(this.notasFake);
+    return from(this.db.notes.toArray())
   }
 
-  getNote(id:number):Observable<NoteModel>{
-    return of(this.notasFake.find(note => note.id === id)!);
+  getNote(id:number):Observable<NoteModel|undefined>{
+    return from(this.db.notes.get(id));
   }
 
-  createNote(text:string):Observable<boolean>{
-    let newNote:NoteModel = {id:this.notasFake.length, text:text};
-    this.notasFake = this.notasFake.concat([newNote]);
-    return of(true);
+  createNote(text:string){
+    this.db.notes.add({text:text});
   }
 
-  updateNote(note:NoteModel){
-    this.removeNote(note.id);
-    this.createNote(note.text);
+  updateNote(noteChange:NoteModel, id:number){
+    this.removeNote(id)
+    this.createNote(noteChange.text)
   }
 
-  removeNote(id:number):Observable<boolean>{
-    this.notasFake = this.notasFake.filter(function(note, index, arr) {
-      return note.id != id;
-    });
-    return of(true)
+  removeNote(id:number){
+      this.db.notes.delete(id!);
   }
 
 }
