@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { from, Observable, of } from 'rxjs';
-import { Dexie} from 'dexie';
+import { Dexie } from 'dexie';
 export interface NoteModel{
   text:string,
   id?:number
