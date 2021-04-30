@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1619787326841,
+  "timestamp": 1619788187448,
   "index": "https://nikomartn.github.io/NoteApp/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://nikomartn.github.io/NoteApp/favicon.ico",
         "https://nikomartn.github.io/NoteApp/index.html",
-        "https://nikomartn.github.io/NoteApp/main.5fe98791c72c4c4f8e4d.js",
+        "https://nikomartn.github.io/NoteApp/main.af43aab58427b939f4a5.js",
         "https://nikomartn.github.io/NoteApp/manifest.webmanifest",
         "https://nikomartn.github.io/NoteApp/polyfills.94daefd414b8355106ab.js",
         "https://nikomartn.github.io/NoteApp/runtime.7b63b9fd40098a2e8207.js",
@@ -306,8 +306,8 @@
     "https://nikomartn.github.io/NoteApp/assets/icons/icon-72x72.png": "4c958bb46c33acb4ae44dcc819b8d7be1c943680",
     "https://nikomartn.github.io/NoteApp/assets/icons/icon-96x96.png": "a7efb47dcad74e320722b1322d9a22912217f574",
     "https://nikomartn.github.io/NoteApp/favicon.ico": "ed40922018de689a293251e34074d05f3a3a66c2",
-    "https://nikomartn.github.io/NoteApp/index.html": "5d25527816373736ab2924e86eb1fdf7e8a043b6",
-    "https://nikomartn.github.io/NoteApp/main.5fe98791c72c4c4f8e4d.js": "e9d5c4a79d24710bd750e5e5a17696978afee8f4",
+    "https://nikomartn.github.io/NoteApp/index.html": "6c6535b10d650958d5272fa02f4893ea5df38f86",
+    "https://nikomartn.github.io/NoteApp/main.af43aab58427b939f4a5.js": "5a96c82211d375ad8181c8efbbfb0b56f25120b5",
     "https://nikomartn.github.io/NoteApp/manifest.webmanifest": "f89af4740489255a2a7337d7791de1253e2b8ac9",
     "https://nikomartn.github.io/NoteApp/polyfills.94daefd414b8355106ab.js": "cfe7b0b53e96bff9ba384b4d497c08475a617d62",
     "https://nikomartn.github.io/NoteApp/runtime.7b63b9fd40098a2e8207.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
